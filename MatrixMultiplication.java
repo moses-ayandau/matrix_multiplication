@@ -4,8 +4,11 @@ import java.util.Scanner;
 class MatrixMultiplication{
 
     static int[][] calculateMult(int[][] matrixA, int[][] matrixB){
+        //Declares resutlting multiplication of the two matrices
         int[][] results = new int[matrixA.length][matrixB[0].length];
+        //Iterate over the rows of the first matrix
         for(int i=0; i<matrixA.length; i++){
+            //Iterate columns of the matrix B
             for(int j=0; j<matrixB[0].length; j++){
                 results[i][j] = 0;
                 for(int k=0; k<matrixA[i].length; k++){
@@ -15,6 +18,9 @@ class MatrixMultiplication{
         }
         return results;
         }
+
+        
+        //Prints the matrix to the console
     static void printMatrix(int[][] mat){
         for(int i=0; i<mat.length; i++){
             for(int j=0; j<mat[i].length; j++){
@@ -66,6 +72,8 @@ class MatrixMultiplication{
         int[][] mB = new int[rowB][colB];
 System.out.println("Please enter the values for matrix A");
 
+
+//Looping through the first matrix and storing the values
 for(int i=0; i<rowA; i++){
     for(int j=0; j<colA; j++){
         try {
@@ -78,6 +86,7 @@ for(int i=0; i<rowA; i++){
 }
 System.out.println("Please enter the values for matrix B");
 
+//Loop through and stores the second matrix
 for(int i=0; i<rowB; i++){
     for(int j=0; j<colB; j++){
         mB[i][j] = scanner.nextInt();
@@ -90,7 +99,7 @@ for(int i=0; i<rowB; i++){
         printMatrix(mA);
         System.out.println("Matrix B");
         printMatrix(mB);
-        System.out.println("Results of the multiplication!");
+        System.out.println("Matrix A X Matrix B");
         int[][] c = calculateMult(mA, mB);
         printMatrix(c);
 
